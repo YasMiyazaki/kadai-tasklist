@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     
     if @task.save
       flash[:success] = 'タスクが正常に登録されました'
-      redirect to @task
+      redirect_to @task
     else
       flash.now[:danger] = 'タスクが登録されませんでした'
       render :new
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
     @task.destroy
     
     flash[:success] = 'タスクは正常に削除されました'
-    redirect_to task_url
+    redirect_to tasks_url
   end
 
   private
